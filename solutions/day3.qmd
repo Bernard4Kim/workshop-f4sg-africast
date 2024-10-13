@@ -371,7 +371,7 @@ future_month_strike <- future_month |>
 Add a new column, `population_under1`, to include the estimated population under 1, by completing the R code:
 
 ```{r}
-forecast_population <- vaccine_administrated_tsb |> model(regression_population=TSLM(dose_adminstrated)) |> forecast(h=forecast_horizon)
+forecast_population <- vaccine_administrated_tsb |> model(regression_population=TSLM(population_under1)) |> forecast(h=forecast_horizon)
 
 population_point_forecast <- forecast_population |> as_tibble() |> select(.mean)
 ```
